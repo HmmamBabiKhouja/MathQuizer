@@ -2,7 +2,7 @@
 <html lang='en'>
 <head>
     <meta charset='UTF-8'>
-    <meta http-equiv='Content-Type' content='text/html;charset=UTF-8'>
+    <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='stylesheet' href='styles/style.css'>
     <link rel='stylesheet' href='styles/queries.css'>
@@ -21,7 +21,7 @@
             <div class="nav-list-father">
                 <div class="nav-list">
                     <ul class="nav-links">
-                        <li class="nav-link"><a href="">OPT1</a></li>
+                        <li class="nav-link"><a href=""> OPT1</a></li>
                         <li class="nav-link"><a href="">OPT2</a></li>
                     </ul>
                 </div>
@@ -33,9 +33,21 @@
             </div>
         </nav>
         <header class="container">
-            
+            <div class="center-container">
+                <div class="nums-container">
+                    <span class="nums" id="num1">12</span>
+                    <span class="num-op" id="operator">-</span>
+                    <span class="nums" id="num2">12</span>
+                    <span class="num-op">&#61;</span>
+                    <form class="result-form" action="" autocomplete="off">
+                        <input type="text" class="nums" id="result" placeholder="?">
+                    </form>
+                </div>
+                <button  class="btn-input" onclick="operate()">check</button>
+            </div>
         </header>
     </section>
-    <script src="JSCode/burger.js"></script>    
+    <script src="JSCode/burger.js"></script>
+    <script src="JSCode/numsGenerator.js"></script>    
 </body>
 </html>

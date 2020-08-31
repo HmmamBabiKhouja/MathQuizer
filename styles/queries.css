@@ -1,208 +1,40 @@
-@media (prefers-color-scheme:dark){
-
-    body{
-        background-color: var(--body-dark);
-        color: var(--white);
-        box-shadow:#ffffff;
-    }
-
-    .burger-line{
-        background-color: var(--white) ;
-    }
-
-    .nav-link>a,
-    .nav-link>a:visited,
-    .nav-link>a:focus{
-        color: var(--white) ;
-    }
-
-    .devices-img{
-        background-color: var(--body-dark);
-    }
-
-    .about-me{
-        background-color:var(--sunrise-red);
-        color: var(--white);
-    }
-
-    .social-icon{
-        color: var(--white);
-    }
-
-    .card-icon{
-        color:var(--sunrise-red);
-    }
-
-    .visit-buttons{
-        background-color:var(--sunrise-red) ;
-    }
-
-}
-
-@media only screen and (min-width:375px){
-    html{
+@media only screen and (min-width:375px) {
+    html {
         font-size: 17px;
     }
 }
 
-@media only screen and (min-width:768px){
-    html{
+@media only screen and (min-width:768px) {
+    html {
         font-size: 19px;
     }
 
-    .container{
+    .container {
         width: 93%;
     }
 
-    .nav-links{
-        margin-top:1rem ;
+    .nav-links {
+        margin-top: 1rem;
     }
-
-    .content-headers{
-        flex: 1.2;
-        margin-top: 0.6rem;
-    }
-
-    .person-img{
-        margin-top:0;
-    }            
-    
-    .person-img>img{
-        width: 53%;
-    }            
-
-    .devices-img>img{
-        width: 60%;
-    }    
-
-    .social-block{
-        margin-top:1.4rem;
-    }
-
-    .eng-quran-verse,
-    .ar-quran-verse{
-        margin-bottom:1.4rem;
-    }
-
-    .cards-container{
-        grid-template-columns: repeat(2,1fr);
-    }
-
-    .card:nth-child(1){
-        border-radius: 6px 0 0 0;
-    }
-
-    .card:nth-child(2){
-        border-radius: 0 6px 0 0;
-    }
-
-    .card:nth-child(5){
-        border-radius: 0 0 0 6px;
-        box-shadow: 0 8px 6px -5px #e6ecf8;
-    } 
-    
-    .card:nth-child(6){
-        border-radius: 0 0 6px 0;
-        box-shadow: 0 8px 6px -5px #e6ecf8;
-    } 
 
 }
 
-@media only screen and (min-width:1024px){
-    
-    html{
-        font-size:20px;
+@media only screen and (min-width:1024px) {
+
+    html {
+        font-size: 20px;
     }
 
-    header{
-        display:grid;
-        grid-template-rows:1fr 1fr;
-        grid-template-columns:1.5fr 1fr;
-    }
-
-    .person-img{
-        grid-row-start: 1;
-        grid-row-end: 3;
-        grid-column-start: 1;
-        grid-column-end: 2;
-        align-self: center;
-    }
-
-    .person-img>img{
-        width: 84%;
-    }
-
-    .devices-img>img{
-        width: 40%;
-    }  
-
-    .headers-block{
-        grid-row-start: 1;
-        grid-row-end: 2;
-        grid-column-start: 2;
-        grid-column-end: 3;
-        align-self: end;
-    }
-
-    .social-block{
-        grid-row-start: 2;
-        grid-row-end: 3;
-        grid-column-start: 2;
-        grid-column-end: 3;
-        align-self: start;
-    }
-
-    .social{
-        width: 65%;
-        margin-top: 3rem;
-        position: relative;
-        top: 0;
-        left: 0;
-        transform:translate(0,0);
-    }
-
-    .cards-container{
-        grid-template-columns: repeat(3,1fr);
-    }
-
-    .card:nth-child(1){
-        border-radius: 6px 0 0 0;
-    }
-
-    .card:nth-child(2){
-        border-radius:0 0 0 0;
-        box-shadow: none;
-    }
-
-    .card:nth-child(3){
-        border-radius:0 6px 0 0;
-    }
-
-    .card:nth-child(4){
-        border-radius: 0 0 0 6px;
-        box-shadow: 0 8px 6px -5px #e6ecf8;
-    }
-
-    .card:nth-child(5){
-        border-radius: 0 0 0 0;
-    }
-    
-    .card-icon{
-        font-size: 3rem;
+    header {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1.5fr 1fr;
     }
 }
 
-@media only screen and (min-width:1365px){
-    html{
+@media only screen and (min-width:1365px) {
+    html {
         font-size: 21px;
     }
-    
-    .person-img>img{
-        width: 70%;
-    }
-    
-    .devices-img>img{
-        width: 35%;
-    }  
-    
+
 }

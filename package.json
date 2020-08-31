@@ -1,0 +1,19 @@
+{
+  "name": "mathquizer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mine.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HmmamBabiKhouja/MathQuizer.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HmmamBabiKhouja/MathQuizer/issues"
+  },
+  "homepage": "https://github.com/HmmamBabiKhouja/MathQuizer#readme"
+}
