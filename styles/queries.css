@@ -9,14 +9,6 @@
         font-size: 19px;
     }
 
-    .container {
-        width: 93%;
-    }
-
-    .nav-links {
-        margin-top: 1rem;
-    }
-
 }
 
 @media only screen and (min-width:1024px) {
@@ -25,10 +17,8 @@
         font-size: 20px;
     }
 
-    header {
-        display: grid;
-        grid-template-rows: 1fr 1fr;
-        grid-template-columns: 1.5fr 1fr;
+    .result-form {
+        width: 25%;
     }
 }
 
@@ -37,4 +27,14 @@
         font-size: 21px;
     }
 
+}
+
+@media only screen and (max-height:280px) {
+    html {
+        font-size: 19px;
+    }
+
+    .nums-container {
+        margin: 3rem auto;
+    }
 }

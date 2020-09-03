@@ -1,11 +1,16 @@
 window.addEventListener("load",init);
 
+/* vars */
+let score = 0 ;
+
+/* DOM vars */
 const num1 = document.querySelector("#num1");
 const num2 = document.querySelector("#num2");
 const opertor = document.querySelector("#operator");
 const checkBtn = document.querySelector(".btn-input");
 const result = document.querySelector("#result")
-// const score = document.querySelector("");
+const scoreDisplay = document.querySelector(".socre-value");
+scoreDisplay.innerHTML=score;
 
 function init(){
     let temp1 = generateNumber();
@@ -14,7 +19,6 @@ function init(){
     num2.innerHTML= Math.min(temp1,temp2);
     opertor.innerHTML=pickOperator();
 }
-
 
 function generateNumber(){
     return Math.round(Math.random() * 49)+1;
@@ -30,7 +34,11 @@ checkBtn.addEventListener("click",()=>{
     setTimeout(()=>{checkBtn.classList.remove("btn-input-clicked")}, 400); 
 
     if(eval(num1.innerHTML+opertor.innerHTML+num2.innerHTML)==result.value){
-        init();
-        result.value=""
+        score+=1;
+    }else{
+        score = 0;
     }
+    scoreDisplay.innerHTML=score;
+    init();
+    result.value=""
 });
