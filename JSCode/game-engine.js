@@ -2,8 +2,11 @@ window.addEventListener("load",init);
 
 /* vars */
 let score = 0 ;
+let opertors=["+","-",];//"*","/" add them on upper levels 
 
 /* DOM vars */
+const levelPicker = document.querySelector(".level-picker");
+const navList = document.querySelector(".nav-list")
 const num1 = document.querySelector("#num1");
 const num2 = document.querySelector("#num2");
 const opertor = document.querySelector("#operator");
@@ -25,7 +28,6 @@ function generateNumber(){
 }
 
 function pickOperator(){
-    let opertors=["+","-",];//"*","/" add them on upper levels 
     return opertors[Math.floor(Math.random()*opertors.length)];
 }
 
@@ -41,4 +43,8 @@ checkBtn.addEventListener("click",()=>{
     scoreDisplay.innerHTML=score;
     init();
     result.value=""
+});
+
+levelPicker.addEventListener("click",()=>{
+    navList.classList.toggle("nav-list-active");
 });
