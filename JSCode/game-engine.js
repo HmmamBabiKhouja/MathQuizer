@@ -5,6 +5,7 @@ const num2 = document.querySelector("#num2");
 const opertor = document.querySelector("#operator");
 const checkBtn = document.querySelector(".btn-input");
 const result = document.querySelector("#result")
+// const score = document.querySelector("");
 
 function init(){
     let temp1 = generateNumber();
@@ -25,6 +26,9 @@ function pickOperator(){
 }
 
 checkBtn.addEventListener("click",()=>{
+    checkBtn.classList.add("btn-input-clicked")
+    setTimeout(()=>{checkBtn.classList.remove("btn-input-clicked")}, 400); 
+
     if(eval(num1.innerHTML+opertor.innerHTML+num2.innerHTML)==result.value){
         init();
         result.value=""
