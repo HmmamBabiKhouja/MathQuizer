@@ -46,5 +46,8 @@ checkBtn.addEventListener("click",()=>{
 });
 
 levelPicker.addEventListener("click",()=>{
+    levelPicker.classList.add("level-picker-clicked")
+    setTimeout(()=>{levelPicker.classList.remove("level-picker-clicked")}, 400); 
+
     navList.classList.toggle("nav-list-active");
 });
