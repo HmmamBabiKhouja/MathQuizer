@@ -49,53 +49,43 @@ body {
 
 .nav-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
+    flex-direction: column;
     margin-top:0.7rem;
     width: 93%;
     margin: 0 auto;
 }
 
+.selection-block,
 .score-container{
-    height: 65px;
-    line-height: 65px;
+    height: 30px;
+    line-height: 30px;
 }
 
+.score-container{
+    margin-top: 0.4rem ;
+}
+
+.level-label,
 .score{
-    font-size: 0.9rem;
-    text-align: center;
-
-}
-
-.nav-list-container {
-    position: relative;
-    width: 50%;
-}
-
-.nav-list {
-    width: 100%;
-    position: absolute;
-    transform: translateY(-100%);
-    transition: 0.5s ease;
-    margin-top:-0.7rem;
-}
-
-.nav-list-active {
-    transform: translateY(0);
-    margin-top: .5rem;
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.nav-link{
-    text-decoration: none;
-    color: var(--pink);
     font-size: 1.2rem;
-    font-weight: 700;
+    text-align: center;
+}
+
+ select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    appearance: button;       /* Remove default arrow */
+    border: 1px solid var(--pink);
+    background: var(--white);
+    color: var(--pink);
+    border-radius: 20px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 /* mid-home */
@@ -154,9 +144,21 @@ body {
     color: var(--pink);
 }
 
+
+/* Chrome, Safari, Edge etc */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /* BUTTONS */
 
-.level-picker,
 .btn-input{
     background: var(--pink);
     color: var(--white);
@@ -166,25 +168,12 @@ body {
     cursor: pointer;
     transition: 0.2s;
     height: 36px;
-}
-
-.level-picker{
-    font-size:0.85rem ;
-    margin: 1rem 0;
-    width: 22%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}    
-
-.btn-input {
     font-size:0.95rem ;
     outline: none;
     width: 26%;
 }
 
-.btn-input-clicked,
-.level-picker-clicked{
+.btn-input-clicked{
     transform: translate(0 , 2px);
     box-shadow: none;
 }

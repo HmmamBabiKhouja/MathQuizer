@@ -1,12 +1,18 @@
 window.addEventListener("load",init);
 
 /* vars */
+const levels = {
+    "unli" :{ opertors:["+","-","*","/"],maxNum :999 },
+    "kg" :{ opertors:["+","-"],maxNum :5 },
+    "c1" :{ opertors:["+","-"],maxNum :50 },
+    "c2" :{ opertors:["+","-"],maxNum :100 }
+}
+
+let opertors = levels.unli.opertors;// default
+let maxNum = levels.unli.maxNum;// default
 let score = 0 ;
-let opertors=["+","-",];//"*","/" add them on upper levels 
 
 /* DOM vars */
-const levelPicker = document.querySelector(".level-picker");
-const navList = document.querySelector(".nav-list")
 const num1 = document.querySelector("#num1");
 const num2 = document.querySelector("#num2");
 const opertor = document.querySelector("#operator");
@@ -14,6 +20,8 @@ const checkBtn = document.querySelector(".btn-input");
 const result = document.querySelector("#result")
 const scoreDisplay = document.querySelector(".socre-value");
 scoreDisplay.innerHTML=score;
+const levelSelector = document.querySelector("#levels");
+levelSelector.addEventListener("change", setLevel, false);
 
 function init(){
     let temp1 = generateNumber();
@@ -24,7 +32,7 @@ function init(){
 }
 
 function generateNumber(){
-    return Math.round(Math.random() * 49)+1;
+    return Math.round(Math.random() * maxNum)+1;
 }
 
 function pickOperator(){
@@ -45,9 +53,11 @@ checkBtn.addEventListener("click",()=>{
     result.value=""
 });
 
-levelPicker.addEventListener("click",()=>{
-    levelPicker.classList.add("level-picker-clicked")
-    setTimeout(()=>{levelPicker.classList.remove("level-picker-clicked")}, 400); 
-
-    navList.classList.toggle("nav-list-active");
-});
+function setLevel(){
+    let temp = levelSelector.value;
+    opertors = levels[temp].opertors;// default
+    maxNum = levels[temp].maxNum;
+    init();
+    score = 0 ;
+    scoreDisplay.innerHTML=score;
+}
