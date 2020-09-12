@@ -15,15 +15,15 @@
     <section class="home">
         <nav class="nav-container">
             <div class="score-container">
-                <span class="score score-line">SCORE : <span class="score socre-value"></span></span>
+                <span class="score score-line">SCORE : <span class="score score-value"></span></span>
             </div>
             <div class="selection-block">
                 <label class="level-label" for="levels">Level : </label>
-                <select id="levels" autoComplete="off">
-                    <option value="kg">KG</option>
+                <select id="levels" class="levels" autoComplete="off">
+                    <option value="kg" selected>KG</option>
                     <option value="c1">Class 1</option>
                     <option value="c2">Class 2</option>
-                    <option value="unli" selected>Unlimited</option>
+                    <!-- <option value="unli" selected>Unlimited</option> -->
                 </select>
             </div>
         </nav>
@@ -34,11 +34,12 @@
                     <span class="num-op" id="operator"></span>
                     <span class="nums" id="num2"></span>
                     <span class="num-op">&#61;</span>
-                    <form class="result-form" action="" autocomplete="off">
-                        <input type="number" pattern="\d*" class="nums" id="result" placeholder="?">
+                    <form class="result-form" action="" autocomplete="off" onsubmit="return false">
+                        <input type="number" pattern="\d*" class="nums" id="result" placeholder="?"
+                        onkeydown = "if (event.keyCode == 13) document.getElementById('btn-input').click()">
                     </form>
                 </div>
-                <button class="btn-input">CHECK</button>
+                <button id="btn-input" class="btn-input" onclick="enterVal();">CHECK</button>
             </div>
         </div>
     </section>

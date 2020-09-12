@@ -72,7 +72,7 @@ body {
     text-align: center;
 }
 
- select {
+.levels{
     -webkit-appearance: button;
     -moz-appearance: button;
     -webkit-user-select: none;
