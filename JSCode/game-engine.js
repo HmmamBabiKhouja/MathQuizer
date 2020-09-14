@@ -81,3 +81,4 @@ function setLevel() {
     score = 0;
     scoreDisplay.innerHTML = score;
 }
+
