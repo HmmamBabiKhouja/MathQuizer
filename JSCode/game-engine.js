@@ -1,6 +1,6 @@
 /*FIX:
  D don't take the result value if it's empty 
- * redo evaluation of each level
+ D redo evaluation of each level
  */
 
 window.addEventListener("load", init);
@@ -8,21 +8,32 @@ window.addEventListener("load", init);
 /* vars */
 const levels = {
     "kg": {
-        operators: ["+", "-"],
-        maxNum: 5
+        0: {
+            operators: ["+", "-"],
+            maxNum: 5
+        }
     },
     "c1": {
-        operators: ["+", "-"],
-        maxNum: 50
+        0: {
+            operators: ["+", "-", "*"],
+            maxNum: 25
+        }
     },
     "c2": {
-        operators: ["+", "-"],
-        maxNum: 100
+        0: {
+            operators: ["+", "-"],
+            maxNum: 100
+        },
+        1: {
+            operators: ["*", "/"],
+            maxNum: 10
+        }
     }
 }
 
-let operators = levels.kg.operators; // default
-let maxNum = levels.kg.maxNum; // default
+let level = levels.kg;
+let operators = level[0].operators; // default
+let maxNum = level[0].maxNum; // default
 let score = 0;
 
 /* DOM vars */
@@ -38,6 +49,12 @@ const levelSelector = document.querySelector("#levels");
 levelSelector.addEventListener("change", setLevel, false);
 
 function init() {
+    let levelsTypes = Object.keys(level).length;
+    let levelType = Math.floor(Math.random() * levelsTypes);
+    console.log(level[levelType]);
+    operators = level[levelType].operators;
+    maxNum = level[levelType].maxNum;
+
     let temp1 = generateNumber();
     let temp2 = generateNumber();
     num1.innerHTML = Math.max(temp1, temp2);
@@ -60,7 +77,7 @@ function enterVal() {
     }, 400);
     if (result.value === null || result.value === "") {
         alert("Enter the result of the equation instead of the ? before you hit check")
-    }else{
+    } else {
         if (eval(num1.innerHTML + operator.innerHTML + num2.innerHTML) == result.value) {
             score += 1;
         } else {
@@ -70,15 +87,12 @@ function enterVal() {
         init();
         result.value = ""
     }
-  
+
 };
 
 function setLevel() {
-    let level = levelSelector.value;
-    operators = levels[level].operators; // default
-    maxNum = levels[level].maxNum;
+    level = levels[levelSelector.value];
     init();
     score = 0;
     scoreDisplay.innerHTML = score;
 }
-

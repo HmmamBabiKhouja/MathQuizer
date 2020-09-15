@@ -24,9 +24,10 @@ body {
 
 :root {
     --blue: #00c3f7;
-    --pink: #f41971;
     --white: #ffffff;
     --orange: #ffb94a;
+    --pink: #f41971;
+    --dark-pink: #d00a5a;
 }
 
 .home,
@@ -103,7 +104,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-items: start;
-    /* transform: translateY(-15px); */
+    transform: translateY(-15px);
 }
 
 .nums-container {
@@ -162,7 +163,7 @@ input[type=number] {
 .btn-input{
     background: var(--pink);
     color: var(--white);
-    box-shadow: 0 2px 0 0.3px var(--white);
+    box-shadow: 0 4px 0 0px var(--dark-pink);
     border: 1px solid transparent;
     border-radius: 20px;
     cursor: pointer;
@@ -174,6 +175,6 @@ input[type=number] {
 }
 
 .btn-input-clicked{
-    transform: translate(0 , 2px);
+    transform: translate(0 , 4px);
     box-shadow: none;
 }
