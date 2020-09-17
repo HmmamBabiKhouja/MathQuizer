@@ -1,7 +1,4 @@
-/*FIX:
- D don't take the result value if it's empty 
- D redo evaluation of each level
- */
+/* TODO: add / operator */
 
 window.addEventListener("load", init);
 
@@ -15,19 +12,19 @@ const levels = {
     },
     "c1": {
         0: {
-            operators: ["+", "-", "*"],
+            operators: ["+", "-"],
             maxNum: 25
         }
     },
-    "c2": {
+    "c2": { // 2 levels on the same level because the maxNum of simple operators like - and + differs from complex operators like * and +  
         0: {
             operators: ["+", "-"],
             maxNum: 100
         },
         1: {
-            operators: ["*", "/"],
+            operators: ["*"],
             maxNum: 10
-        }
+        },
     }
 }
 
@@ -51,15 +48,16 @@ levelSelector.addEventListener("change", setLevel, false);
 function init() {
     let levelsTypes = Object.keys(level).length;
     let levelType = Math.floor(Math.random() * levelsTypes);
-    console.log(level[levelType]);
     operators = level[levelType].operators;
     maxNum = level[levelType].maxNum;
+    operator.innerHTML = pickOperator();
 
     let temp1 = generateNumber();
     let temp2 = generateNumber();
-    num1.innerHTML = Math.max(temp1, temp2);
-    num2.innerHTML = Math.min(temp1, temp2);
-    operator.innerHTML = pickOperator();
+    max = Math.max(temp1, temp2);
+    min = Math.min(temp1, temp2);
+    num1.innerHTML = max;
+    num2.innerHTML = min;
 }
 
 function generateNumber() {
@@ -75,6 +73,7 @@ function enterVal() {
     setTimeout(() => {
         checkBtn.classList.remove("btn-input-clicked")
     }, 400);
+
     if (result.value === null || result.value === "") {
         alert("Enter the result of the equation instead of the ? before you hit check")
     } else {
@@ -83,6 +82,7 @@ function enterVal() {
         } else {
             score = 0;
         }
+
         scoreDisplay.innerHTML = score;
         init();
         result.value = ""
